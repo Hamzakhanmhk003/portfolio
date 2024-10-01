@@ -1,0 +1,495 @@
+@import url('https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap');
+/*-----------------------------------*\
+  #HERO
+\*-----------------------------------*/
+
+.elem,
+.rotate-img { display: none; }
+
+.hero {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-block: 100px var(--section-padding);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  transition: background-image 1s ease-in-out; /* Smooth background transition */
+}
+
+
+.hero-content.fade-in {
+  opacity: 1; /* Fully visible */
+}
+
+.hero-content.fade-out {
+  opacity: 0; /* Fully transparent during fade */
+}
+
+.hero-banner {
+  width: 150px;
+  height: 172px;
+  background-color: var(--independence);
+  border-radius: var(--radius-10);
+  margin-inline: auto;
+  margin-block-end: 30px;
+}
+
+.hero-banner img { border-radius: inherit; }
+
+.hero-content {
+  text-align: center;
+  color: whitesmoke;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-title {
+  font-family: var(--ff-barlow);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-600);
+  line-height: 1.3;
+  margin-block-end: 14px;
+  text-shadow: 
+    0 0 5px rgba(255, 0, 0, 0.7),   /* Red glow */
+    0 0 10px rgba(255, 0, 0, 0.5),  /* Bright red glow */
+    0 0 15px rgba(255, 0, 0, 0.3);
+  /* backdrop-filter: blur(5px); Apply blur to the background */
+  /* -webkit-backdrop-filter: blur(5px); Safari support */
+}
+
+.hero-title strong {
+  font-size: var(--fs-1);
+  font-weight: inherit;
+  margin-block-end: 8px;
+}
+
+.hero-text { 
+  margin-block-end: 25px;
+  color: white; /* Change text color to white or any desired color */
+  text-shadow: 
+    0 0 5px rgba(255, 0, 0, 0.7),   /* Red glow */
+    0 0 10px rgba(255, 0, 0, 0.5),  /* Bright red glow */
+    0 0 15px rgba(34, 16, 16, 0.3);  /* Faded red glow */
+  /* backdrop-filter: blur(5px); Apply blur to the background */
+  /* -webkit-backdrop-filter: blur(5px); Safari support */
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.btn-group .btn .btn-primary .blue{
+  background-color: rgb(17, 17, 109);
+}
+.btn-group .btn-about{
+  color: black;
+  background-color: whitesmoke;
+}
+
+.btn-group .btn-about:hover{
+  background-color: var(--orange-soda);
+}
+
+.elem .elem-text{
+  color: var(--black);
+}
+
+
+
+
+
+/*-----------------------------------*\
+  #ABOUT
+\*-----------------------------------*/
+
+.abs-img,
+.abs-icon { display: none; }
+
+.about { padding-block-start: 120px; }
+
+.about-banner {
+  background-color: var(--independence);
+  border-radius: var(--radius-10);
+  margin-block-end: 30px;
+}
+
+.about-banner > .img-cover { border-radius: inherit; }
+
+.about :is(.section-title, .section-subtitle, .section-text) { text-align: left; }
+
+.about :is(.section-title, .section-text) { margin-block-end: 30px; }
+
+
+
+
+
+
+/*-----------------------------------*\
+  #SKILLS
+\*-----------------------------------*/
+
+.skills .section-title { margin-block-end: 20px; }
+
+.skills .section-text { margin-block-end: 70px; }
+
+.skills-list {
+  display: grid;
+  gap: 25px;
+}
+
+.skills-item .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 10px;
+}
+
+.skills-title,
+.skills-data {
+  color: var(--white);
+  font-size: var(--fs-5);
+  font-family: var(--ff-barlow);
+  font-weight: var(--fw-600);
+}
+
+.skills-progress-box {
+  background-color: var(--white);
+  height: 8px;
+  border-radius: var(--radius-10);
+}
+
+.skills-progress {
+  background-color: var(--orange-soda);
+  height: 100%;
+  border-radius: inherit;
+}
+
+
+
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+/**
+ * responsive for larger than 600px screen
+ */
+
+@media (min-width: 600px) {
+
+  /**
+   * PORTFOLIO
+   */
+
+  .portfolio-list li:nth-child(even) .card-content { margin-inline-start: 50%; }
+
+}
+
+
+
+
+
+/**
+ * responsive for larger than 768px screen
+ */
+
+@media (min-width: 768px) {
+
+  /**
+   * PORTFOLIO
+   */
+
+  .portfolio-card {
+    background-size: 115%;
+    padding-inline: 80px;
+  }
+
+  .portfolio-card:is(:hover, :focus) { background-size: 130%; }
+
+
+
+  /**
+   * SKILLS, BLOG
+   */
+
+  .skills-list,
+  .blog-list {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+  }
+
+}
+
+
+
+
+
+/**
+ * responsive for larger than 992px screen
+ */
+
+@media (min-width: 992px) {
+
+  /**
+   * CUSTOM PROPERTY
+   */
+
+  :root {
+
+    /**
+     * typography
+     */
+
+    --fs-1: 6.4rem;
+    --fs-2: 3.5rem;
+    --fs-3: 3.6rem;
+
+    /**
+     * spacing
+     */
+
+    --section-padding: 80px;
+
+  }
+
+
+
+  /**
+   * REUSED STYLE
+   */
+
+  .container {
+    max-width: 1050px;
+    margin-inline: auto;
+  }
+
+
+  /**
+   * HERO
+   */
+
+  .hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .hero-content { text-align: left; }
+
+  .btn-group { justify-content: flex-start; }
+
+  .hero-title span { font-size: 3rem; }
+
+  .hero-title {
+    --fs-5: 2.2rem;
+    margin-block-end: 25px;
+  }
+
+  .hero-text {
+    margin-block-end: 25px;
+    font-size: var(--fs-5);
+  }
+
+  .hero-banner {
+    position: relative;
+    margin-block-end: 0;
+    order: 1;
+    width: 340px;
+    height: 390px;
+    margin-inline: 0;
+    margin-inline-start: auto;
+  }
+
+  .elem {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--white);
+    border-radius: var(--radius-10);
+    padding: 20px;
+  }
+
+  .elem-1 {
+    top: 20px;
+    left: -130px;
+  }
+
+  .elem-1 .elem-title { color: var(--vivid-sky-blue); }
+
+  .elem-2 {
+    bottom: 30px;
+    right: -80px;
+  }
+
+  .elem-2 .elem-title { color: var(--fiery-rose); }
+
+  .elem-title {
+    font-size: 4.5rem;
+    line-height: 1.1;
+  }
+
+  .elem-text {
+    max-width: 10ch;
+    color: var(--black);
+    font-weight: var(--fw-700);
+    line-height: 1.1;
+  }
+
+  .elem-3 {
+    top: -40px;
+    right: -30px;
+  }
+
+  .elem-3 ion-icon {
+    color: var(--minion-yellow);
+    font-size: 6rem;
+  }
+
+  .rotate-img {
+    display: block;
+    position: absolute;
+    bottom: -60px;
+    left: -60px;
+    width: 120px;
+    animation: rotate360 15s linear infinite reverse;
+  }
+
+  @keyframes rotate360 {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(1turn); }
+  }
+
+
+
+  /**
+   * ABOUT
+   */
+
+  .about { padding-block: 180px; }
+
+  .about .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .about-banner {
+    position: relative;
+    margin-block-end: 0;
+  }
+
+  .abs-img,
+  .abs-icon {
+    display: block;
+    position: absolute;
+  }
+
+  .abs-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: inherit;
+    bottom: -150px;
+    left: -100px;
+  }
+
+  .abs-icon {
+    font-size: 5rem;
+    padding: 20px;
+    border-radius: inherit;
+  }
+
+  .abs-icon-1 {
+    top: 50px;
+    left: -120px;
+    background-color: var(--bluetiful);
+  }
+
+  .abs-icon-2 {
+    top: -40px;
+    right: -40px;
+    background-color: var(--gold-web-golden);
+  }
+
+  .abs-icon-3 {
+    bottom: -40px;
+    left: 250px;
+    background-color: var(--rufous);
+  }
+
+
+
+  /**
+   * PORTFOLIO
+   */
+
+  .portfolio-card .card-subtitle { font-size: var(--fs-5); }
+
+  .portfolio-card .btn-link { --fs-6: 1.6rem; }
+
+
+
+  /**
+   * SKILLS
+   */
+
+  .skills-list { column-gap: 100px; }
+
+
+
+  /**
+   * CONTACT
+   */
+
+  .contact-card { padding: 100px; }
+
+  .contact .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+
+  .contact-form { margin-block-end: 0; }
+
+  .contact-item { gap: 25px; }
+
+  .contact-icon { padding: 30px; }
+
+
+
+  /**
+   * BLOG
+   */
+
+  .blog { padding-block-end: 180px; }
+
+  .blog-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+
+  
+
+  /**
+   * FOOTER
+   */
+
+  .footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyright,
+  .footer-list { margin-inline: 0; }
+
+}
